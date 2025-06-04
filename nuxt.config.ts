@@ -28,9 +28,7 @@ export default defineNuxtConfig({
     },
   },
 
-  css: [
-    '~/assets/styles/main.scss',
-  ],
+  css: ['~/assets/styles/main.scss'],
 
   alias: {
     '@utils': resolve('./utilities/'),
@@ -51,16 +49,19 @@ export default defineNuxtConfig({
 
   i18n: {
     lazy: true,
-    vueI18n: 'config.ts',
     defaultLocale: DEFAULT_LANGUAGE,
     strategy: 'prefix_except_default',
+    vueI18n: 'config.ts',
     locales: localeItems,
-    bundle: {
-      optimizeTranslationDirective: false,
-    },
+
     compilation: {
       strictMessage: false,
     },
+
+    bundle: {
+      optimizeTranslationDirective: false,
+    },
+
     detectBrowserLanguage: {
       useCookie: true,
       cookieKey: COOKIE_LOCALE_KEY,

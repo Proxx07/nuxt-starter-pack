@@ -2,7 +2,8 @@
 import VIcon from '@components/VIcon.vue';
 import { useAdvantages } from '@composables/useAdvantages';
 
-const { advantages } = useAdvantages();
+const { advantages, translateWithNuxt } = useAdvantages();
+// const $nuxtApp = useNuxtApp();
 </script>
 
 <template>
@@ -10,6 +11,8 @@ const { advantages } = useAdvantages();
     <h1>
       {{ $t('hello-world') }}
     </h1>
+
+    translateWithNuxt - {{ translateWithNuxt }}
 
     <div v-for="item in advantages" :key="item.title">
       <VIcon :icon="item.icon" />
@@ -21,6 +24,4 @@ const { advantages } = useAdvantages();
   </div>
 </template>
 
-<style scoped lang="scss">
-
-</style>
+<style scoped lang="scss"></style>
