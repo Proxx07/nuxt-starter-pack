@@ -1,6 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import { createResolver } from '@nuxt/kit';
 import { COOKIE_LOCALE_KEY, DEFAULT_LANGUAGE, localeItems } from './i18n/constants';
+import { options } from './plugins/PrimeVue/config';
 
 const { resolve } = createResolver(import.meta.url);
 
@@ -41,11 +42,15 @@ export default defineNuxtConfig({
     apiBaseUrl: 'NUXT_API_BASE_URL',
   },
 
-  modules: [
-    '@vueuse/nuxt',
-    '@vueuse/nuxt',
-    '@nuxtjs/i18n',
-  ],
+  modules: ['@vueuse/nuxt', '@vueuse/nuxt', '@nuxtjs/i18n', '@primevue/nuxt-module'],
+
+  primevue: {
+    autoImport: false,
+    options,
+    components: {
+      include: ['Button', 'InputText', 'InputNumber', 'Select', 'SelectButton', 'InputGroup'],
+    },
+  },
 
   i18n: {
     lazy: true,

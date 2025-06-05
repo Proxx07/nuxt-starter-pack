@@ -4,14 +4,13 @@ const { locales, locale, setLocale } = useI18n();
 
 <template>
   <div class="switcher">
-    <button
+    <Button
       v-for="lang in locales"
       :key="lang.code"
-      :class="[lang.code === locale && 'active']"
+      :severity="lang.code === locale ? 'success' : 'primary'"
+      :label="lang.name"
       @click="setLocale(lang.code)"
-    >
-      {{ lang.name }}
-    </button>
+    />
     <hr>
     {{ locale }}
   </div>

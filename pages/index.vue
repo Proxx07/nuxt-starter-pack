@@ -3,7 +3,6 @@ import VIcon from '@components/VIcon.vue';
 import { useAdvantages } from '@composables/useAdvantages';
 
 const { advantages, translateWithNuxt } = useAdvantages();
-// const $nuxtApp = useNuxtApp();
 </script>
 
 <template>
